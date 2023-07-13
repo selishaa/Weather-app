@@ -25,7 +25,16 @@ const getWeather = (city)=>{
         wind_degrees.innerHTML = response.wind_degrees
         sunrise.innerHTML = response.sunrise
         sunset.innerHTML = response.sunset
+        const temperature = parseInt(response.temp);
+        if (temperature > 30) {
+            document.body.style.backgroundColor = "orange";
+        } else {
+            document.body.style.backgroundColor = "white";
+        }
     })
+    
+   
+    
     .catch(err => console.error(err));
 
 }
@@ -37,3 +46,4 @@ submit.addEventListener("click",(e)=>{
 })
 
 getWeather("Kathmandu")
+
